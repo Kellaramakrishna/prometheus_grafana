@@ -1,6 +1,6 @@
 const express = require('express');
 const client = require('prom-client');
-const bodyParser = require('body-parser');
+//const bodyParser = require('body-parser');
 
 const app = express();
 const register = new client.Registry();
@@ -14,7 +14,7 @@ const meters = {};
 const buildingMeters = {};
 
 // Middleware to parse JSON bodies
-app.use(bodyParser.json());
+app.use(express.json());
 
 // POST endpoint to receive meter readings
 app.post('/meter_reading', (req, res) => {
